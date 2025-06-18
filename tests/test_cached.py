@@ -93,7 +93,6 @@ class SyncMixin:
 
     def test_decorator_lock(self):
         class Lock(object):
-
             count = 0
 
             def __enter__(self):
@@ -194,7 +193,6 @@ class AsyncMixin:
     @sync
     async def test_decorator_lock_async(self):
         class Lock(object):
-
             count = 0
 
             async def __aenter__(self):

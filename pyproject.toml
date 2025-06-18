@@ -14,15 +14,32 @@ dependencies = ["cachetools>=5.2.0"]
 
 [dependency-groups]
 dev = [
-    "black",
+    "ruff",
     "mypy",
     "pytest",
-    "isort",
-    "pylint",
     "Sphinx",
     "sphinx-rtd-theme",
     "types-cachetools",
 ]
 
-[tool.isort]
-profile = "black"
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "SIM", "I"]
+ignore = [
+    # lambda expressions
+    "E731",
+    # ambiguous variable name
+    "E741",
+    # Do not perform function calls in argument defaults
+    "B008",
+    # Within an except clause, raise exceptions with `raise ... from err` or `raise ... from None`
+    "B904",
+    # `zip()` without an explicit `strict=` parameter
+    "B905",
+    # Use `contextlib.suppress(asyncio.CancelledError)` instead of try-except-pass
+    "SIM105",
+    # Use ternary operator `{contents}` instead of if-else-block
+    "SIM108",
+    # `itertools.batched()` without an explicit `strict` parameter
+    "B911",
+]
+
