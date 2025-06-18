@@ -9,7 +9,7 @@ description = "Helpers to use cachetools with async code."
 authors = [{ name = "hephex", email = "figus.federico@gmail.com" }]
 license = "MIT"
 readme = "README.rst"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = ["cachetools>=5.2.0"]
 
 [dependency-groups]
